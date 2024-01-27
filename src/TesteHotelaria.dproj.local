@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/01/26 13:50:42.000.253,=D:\Projetos\Delphi\Hotelaria\src\view\FrmPessoas.pas</Transaction>
+    <Transaction>2024/01/26 13:50:42.000.111,=D:\Projetos\Delphi\Hotelaria\src\view\FrmPrincipal.pas</Transaction>
+    <Transaction>2024/01/26 13:51:09.000.446,=D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.DataSet.pas</Transaction>
+    <Transaction>2024/01/26 13:51:09.000.468,=D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.Pessoa.Controller.pas</Transaction>
+    <Transaction>2024/01/26 13:51:09.000.490,=D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.Pessoa.pas</Transaction>
+    <Transaction>2024/01/26 13:52:55.000.892,=D:\Projetos\Delphi\Hotelaria\src\Unit1.pas</Transaction>
+    <Transaction>2024/01/26 13:58:46.000.235,D:\Projetos\Delphi\Hotelaria\src\Unit1.pas=D:\Projetos\Delphi\Hotelaria\src\Conenction\Classe.Connection.pas</Transaction>
+    <Transaction>2024/01/26 16:04:40.192,=D:\Projetos\Delphi\Hotelaria\src\Unit1.pas</Transaction>
+    <Transaction>2024/01/26 16:09:19.686,D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.pas=D:\Projetos\Delphi\Hotelaria\src\Unit1.pas</Transaction>
+    <Transaction>2024/01/26 16:09:31.198,D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.Json.Json=D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.Json</Transaction>
+    <Transaction>2024/01/26 16:10:41.799,D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.Request.Json.pas=D:\Projetos\Delphi\Hotelaria\src\view\FrmPrincipal.pas</Transaction>
+    <Transaction>2024/01/26 16:10:41.799,D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.Request.Json.dfm=D:\Projetos\Delphi\Hotelaria\src\view\FrmPrincipal.dfm</Transaction>
+    <Transaction>2024/01/26 16:10:56.449,D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.Json.pas=</Transaction>
+    <Transaction>2024/01/26 16:11:29.240,D:\Projetos\Delphi\Hotelaria\src\view\FrmPrincipal.pas=D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.Request.Json.pas</Transaction>
+    <Transaction>2024/01/26 16:11:29.241,D:\Projetos\Delphi\Hotelaria\src\view\FrmPrincipal.dfm=D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.Request.Json.dfm</Transaction>
+    <Transaction>2024/01/26 16:11:50.806,=D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.Json.pas</Transaction>
+    <Transaction>2024/01/26 16:12:05.950,D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.Request.Json.pas=D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.Json.pas</Transaction>
+  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Classes"/>
+    <File Path="Classes\Classe.DataSet.pas"/>
+    <File Path="Classes\Classe.Pessoa.Controller.pas"/>
+    <File Path="Classes\Classe.Pessoa.pas"/>
+    <File Path="Classes\Classe.Request.Json.pas"/>
+    <File Path="Conenction"/>
+    <File Path="Conenction\Classe.Connection.pas"/>
+    <File Path="view"/>
+    <File Path="view\FrmPessoas.pas"/>
+    <File Path="view\FrmPessoas.dfm"/>
+    <File Path="view\FrmPrincipal.pas"/>
+    <File Path="view\FrmPrincipal.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

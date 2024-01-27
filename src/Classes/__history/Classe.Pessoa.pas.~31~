@@ -1,0 +1,100 @@
+unit Classe.Pessoa;
+
+interface
+
+uses
+  Datasnap.DBClient;
+
+type
+  TPessoa = class
+    private
+      FNome: String;
+      FDataNascimento: TDate;
+      FSaldoDevedor: Double;
+    public
+      procedure SetNome(const Value: String);
+      procedure SetDataNascimento(const Value: TDate);
+      procedure SetSaldoDevedor(const Value: Double);
+
+      property Nome: String read FNome write SetNome;
+      property DataNascimento: TDate read FDataNascimento write SetDataNascimento;
+      property SaldoDevedor: Double read FSaldoDevedor write SetSaldoDevedor;
+
+      function Salvarmemoria(const obj: TPessoa): TPessoa;
+      function SalvarBanco: TPessoa;
+
+      function GetDataSetPessoas: TClientDataSet;
+
+      constructor Create;
+      destructor destroy;
+  end;
+
+
+
+
+implementation
+
+uses  classe.Pessoa.Controller,System.SysUtils;
+
+constructor TPessoa.Create;
+begin
+end;
+
+destructor TPessoa.destroy;
+begin
+  Inherited;
+end;
+
+function TPessoa.GetDataSetPessoas: TClientDataSet;
+var
+  ObjController: TPessoaController;
+begin
+  ObjController:= TPessoaController.Create;
+  try
+    result:= ObjController.GetDataSetMemoria
+  finally
+  end;
+end;
+
+procedure TPessoa.SetDataNascimento(const Value: TDate);
+begin
+  FDataNascimento := Value;
+end;
+
+procedure TPessoa.SetNome(const Value: String);
+begin
+  FNome := Value;
+end;
+
+procedure TPessoa.SetSaldoDevedor(const Value: Double);
+begin
+  FSaldoDevedor := Value;
+end;
+
+function TPessoa.SalvarBanco: TPessoa;
+var
+  ObjController: TPessoaController;
+begin
+  ObjController:= TPessoaController.Create;
+  try
+    ObjController.SalvarBanco(self);
+  finally
+    FreeAndNil(ObjController)
+  end;
+end;
+
+function TPessoa.Salvarmemoria(const obj: TPessoa):TPessoa;
+var
+  ObjController: TPessoaController;
+begin
+  if ObjController = nil then
+    ObjController:= TPessoaController.Create;
+  try
+    ObjController.SalvarMemoria(obj);
+  finally
+    //FreeAndNil(ObjController)
+  end;
+end;
+
+
+end.

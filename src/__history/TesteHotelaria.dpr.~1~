@@ -1,0 +1,20 @@
+program TesteHotelaria;
+
+uses
+  Vcl.Forms,
+  FrmPrincipal in 'FrmPrincipal.pas' {Form1},
+  Classe.Pessoa in '..\Classes\Classe.Pessoa.pas',
+  Classe.Pessoa.Controller in '..\Classes\Classe.Pessoa.Controller.pas',
+  FrmPessoas in 'FrmPessoas.pas' {FrmPessoasCadastradas},
+  Classe.DataSet in '..\Classes\Classe.DataSet.pas';
+
+{$R *.res}
+
+begin
+  ReportMemoryLeaksOnShutdown:= True;
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFrmPessoasCadastradas, FrmPessoasCadastradas);
+  Application.Run;
+end.

@@ -1,0 +1,48 @@
+unit FrmPessoas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.ExtCtrls, Vcl.Menus, Vcl.StdCtrls;
+
+type
+  TFrmPessoasCadastradas = class(TForm)
+    DBGrid1: TDBGrid;
+    DsPessoas: TDataSource;
+    PopupMenu1: TPopupMenu;
+    PopupMenu11: TMenuItem;
+    pbnlInfoExcluir: TPanel;
+    Label1: TLabel;
+    procedure PopupMenu11Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPessoasCadastradas: TFrmPessoasCadastradas = nil;
+
+implementation
+
+{$R *.dfm}
+
+uses Classe.Pessoa;
+
+procedure TFrmPessoasCadastradas.PopupMenu11Click(Sender: TObject);
+var
+  Pessoa: TPessoa;
+begin
+  Pessoa:= TPessoa.Create;
+  try
+    pessoa.DeletarPessoa(DBGrid1.Fields[3].Value);
+  finally
+    FreeAndNil(Pessoa);
+  end;
+
+
+end;
+
+end.

@@ -1,0 +1,15 @@
+program TesteHotelaria;
+
+uses
+  Vcl.Forms,
+  FrmPrincipal in 'FrmPrincipal.pas' {Form1},
+  Classe.Pessoa in '..\Classes\Classe.Pessoa.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/01/04 23:01:03.000.163,=C:\Users\Usuário\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/26 09:53:12.881,=C:\Users\Usuário\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/26 09:53:52.879,D:\Projetos\Delphi\Hotelaria\src\view\FrmPrincipal.pas=C:\Users\Usuário\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/01/26 09:53:52.880,D:\Projetos\Delphi\Hotelaria\src\view\FrmPrincipal.dfm=C:\Users\Usuário\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2024/01/26 09:54:05.786,D:\Projetos\Delphi\Hotelaria\src\view\TesteHotelaria.dproj=C:\Users\Usuário\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/01/26 10:11:32.267,=D:\Projetos\Delphi\Hotelaria\src\view\Unit1.pas</Transaction>
+    <Transaction>2024/01/26 10:13:33.123,D:\Projetos\Delphi\Hotelaria\src\view\Classes\Classe.Pessoa.pas=D:\Projetos\Delphi\Hotelaria\src\view\Unit1.pas</Transaction>
+    <Transaction>2024/01/26 10:14:30.695,=D:\Projetos\Delphi\Hotelaria\src\view\Unit1.pas</Transaction>
+    <Transaction>2024/01/26 10:22:49.165,D:\Projetos\Delphi\Hotelaria\src\view\Controller\Classe.Pessoa.Controller.pas=D:\Projetos\Delphi\Hotelaria\src\view\Unit1.pas</Transaction>
+    <Transaction>2024/01/26 10:26:01.545,D:\Projetos\Delphi\Hotelaria\src\view\Controller\Classe.Pessoa.Controller.pas=</Transaction>
+    <Transaction>2024/01/26 10:32:17.396,=D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.Pessoa.pas</Transaction>
+    <Transaction>2024/01/26 10:34:21.037,=D:\Projetos\Delphi\Hotelaria\src\view\Unit1.pas</Transaction>
+    <Transaction>2024/01/26 10:36:17.878,D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.Pessoa.Controller.pas=D:\Projetos\Delphi\Hotelaria\src\view\Unit1.pas</Transaction>
+    <Transaction>2024/01/26 12:28:09.473,=D:\Projetos\Delphi\Hotelaria\src\view\Unit3.pas</Transaction>
+    <Transaction>2024/01/26 12:28:32.994,D:\Projetos\Delphi\Hotelaria\src\view\FrmPessoas.pas=D:\Projetos\Delphi\Hotelaria\src\view\Unit3.pas</Transaction>
+    <Transaction>2024/01/26 12:28:32.994,D:\Projetos\Delphi\Hotelaria\src\view\FrmPessoas.dfm=D:\Projetos\Delphi\Hotelaria\src\view\Unit3.dfm</Transaction>
+    <Transaction>2024/01/26 13:02:27.860,=D:\Projetos\Delphi\Hotelaria\src\view\Unit3.pas</Transaction>
+    <Transaction>2024/01/26 13:03:16.910,D:\Projetos\Delphi\Hotelaria\src\Classes\Classe.DataSet.pas=D:\Projetos\Delphi\Hotelaria\src\view\Unit3.pas</Transaction>
+  </Transactions>
+</BorlandProject>
