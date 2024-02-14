@@ -6,9 +6,9 @@ uses Classe.Pessoa, Data.DB;
 
 type
   TServiceProduto = class
-    public class procedure SalvaNaMemoria(const nome: string; dataNascimento: TDate; SaldoDevedor: Double; SalvarBanco: boolean=False); static ;
-    public class function MostrarPessoasMemoria: TDataSet; static ;
-    public class function GetDataSetPessoasQuery: TDataSet; static ;
+    class procedure SalvaNaMemoria(const nome: string; dataNascimento: TDate; SaldoDevedor: Double; SalvarBanco: boolean=False); static ;
+    class function MostrarPessoasMemoria: TDataSet; static ;
+    class function GetDataSetPessoasQuery: TDataSet; static ;
   end;
 
 implementation
