@@ -8,7 +8,8 @@ uses
   Classe.Pessoa.Controller in 'Classes\Classe.Pessoa.Controller.pas',
   Classe.Pessoa in 'Classes\Classe.Pessoa.pas',
   Classe.Connection in 'Conenction\Classe.Connection.pas',
-  Classe.Request.Json in 'Classes\Classe.Request.Json.pas';
+  Classe.Request.Json in 'Classes\Classe.Request.Json.pas',
+  Classe.Services.Pessoa in 'Services\Classe.Services.Pessoa.pas';
 
 {$R *.res}
 

@@ -1,0 +1,45 @@
+﻿unit Classe.Services.Pessoa;
+
+interface
+
+uses Classe.Pessoa, Data.DB;
+
+type
+  TServiceProduto = class
+    class procedure SalvaNaMemoria(const nome: string; dataNascimento: TDate; SaldoDevedor: Double); static ;
+    class function MostrarPessoasMemoria: TDataSet;
+  end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+class function TServiceProduto.MostrarPessoasMemoria: TDataSet;
+var
+  LPessoa:TPessoa;
+begin
+  LPessoa:= TPessoa.Create;
+  try
+     result:=  LPessoa.GetDataSetPessoas;
+  finally
+   FreeAndNil(LPessoa);
+  end;
+end;
+
+class procedure TServiceProduto.SalvaNaMemoria(const nome: string; dataNascimento: TDate; SaldoDevedor: Double);
+var
+   LPessoa:TPessoa;
+begin
+  LPessoa:= TPessoa.Create;
+  try
+    LPessoa.SetNome(nome);
+    LPessoa.SetDataNascimento(dataNascimento);
+    LPessoa.SetSaldoDevedor(StrToFloatDef(SaldoDevedor,0));
+    LPessoa.Salvarmemoria(nil).SalvarBanco;
+  finally
+    FreeAndNil(LPessoa);
+  end;
+end;
+
+end.

@@ -1,4 +1,4 @@
-unit Classe.Pessoa;
+﻿unit Classe.Pessoa;
 
 interface
 

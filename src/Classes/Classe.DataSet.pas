@@ -1,4 +1,4 @@
-unit Classe.DataSet;
+ï»¿unit Classe.DataSet;
 
 interface
 
@@ -89,7 +89,7 @@ end;
 
 procedure TSingletonClientDataSet.CreateDataSets;
 begin
-  // Apenas Memória
+  // Apenas MemÃ³ria
   FClientDataSet:= TClientDataSet.Create(nil);
   FClientDataSet.Close;
 
@@ -110,7 +110,7 @@ begin
   FClientDataSet.CreateDataSet;
   FClientDataSet.EmptyDataSet;    
   
-  /// Rest Memória
+  /// Rest MemÃ³ria
   FClientDataSetRestJson:= TClientDataSet.Create(nil);
   FClientDataSetRestJson.Close;
 
@@ -234,7 +234,8 @@ begin
     end;    
   finally
     FreeAndNil(LQueryBanco);
-  end;  
+  end;
+
 end;
 
 function TSingletonClientDataSet.GetClientDataSet: TClientDataSet;

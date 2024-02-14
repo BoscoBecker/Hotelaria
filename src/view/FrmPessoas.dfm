@@ -40,7 +40,6 @@ object FrmPessoasCadastradas: TFrmPessoasCadastradas
     Color = clWhite
     TabOrder = 1
     Visible = False
-    ExplicitTop = -6
     object Label1: TLabel
       Left = 552
       Top = 16

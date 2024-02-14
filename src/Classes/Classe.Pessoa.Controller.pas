@@ -1,4 +1,4 @@
-unit Classe.Pessoa.Controller;
+ï»¿unit Classe.Pessoa.Controller;
 
 interface
 
@@ -6,8 +6,6 @@ uses Classe.Pessoa, Classe.DataSet,Datasnap.DBClient, FireDAC.Comp.Client;
 
 type
   TPessoaController = class
-  private
-    procedure ValidacaoCampos(const obj: TPessoa);
   public
     constructor Create;
     Destructor Destroy; reintroduce;
@@ -54,20 +52,7 @@ end;
 
 procedure TPessoaController.SalvarMemoria(const obj: TPessoa);
 begin
-  ValidacaoCampos(obj);
   TSingletonClientDataSet.Instance.AddValuesToDataSet(obj);
-end;
-
-procedure TPessoaController.ValidacaoCampos(const obj: TPessoa);
-begin
-  if obj = nil then Exit;
-  
-  if obj.Nome.Equals('') then
-    raise Exception.Create('O campo Nome não pode ser vazio ');
-  if DateToStr(obj.DataNascimento).Equals('') then
-    raise Exception.Create('O campo Data Nascimento não pode ser vazio ');
-  if obj.SaldoDevedor.ToString.Equals('') then
-    raise Exception.Create('O campo Saldo devedor não pode ser vazio ');
 end;
 
 end.

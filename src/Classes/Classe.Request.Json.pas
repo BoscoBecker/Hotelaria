@@ -1,4 +1,4 @@
-unit Classe.Request.Json;
+Ôªøunit Classe.Request.Json;
 
 interface
 
@@ -118,9 +118,9 @@ var
   LImagem,Lcaminho: String;
 begin
 
-  { TODO 5 -oJo„o Bosco -cWarning :
-  Verifico se È <> nil, pois o delphi È problem·tico com valotes null em Json
-  Gera Access violation, pois se È null para o Delphi È NIl ...}
+  { TODO 5 -oJo√£o Bosco -cWarning :
+  Verifico se √© <> nil, pois o delphi √© problem√°tico com valotes null em Json
+  Gera Access violation, pois se √© null para o Delphi √© NIl ...}
 
   try
     for var i := 0 to JsonArray.Count - 1 do

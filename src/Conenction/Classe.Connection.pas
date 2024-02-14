@@ -1,4 +1,4 @@
-unit Classe.Connection;
+﻿unit Classe.Connection;
 
 interface
 

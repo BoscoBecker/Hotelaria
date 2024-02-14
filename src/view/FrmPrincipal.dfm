@@ -23,8 +23,6 @@ object FrmMainPrincipal: TFrmMainPrincipal
     ActivePage = TabSheet1
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 832
-    ExplicitHeight = 277
     object TabSheet1: TTabSheet
       Caption = 'Parte 1'
       object gbBanco: TGroupBox
@@ -35,7 +33,6 @@ object FrmMainPrincipal: TFrmMainPrincipal
         Align = alTop
         Caption = 'Banco de Dados'
         TabOrder = 0
-        ExplicitWidth = 824
         object btnGravarMemoriabanco: TButton
           Left = 49
           Top = 31
@@ -72,7 +69,6 @@ object FrmMainPrincipal: TFrmMainPrincipal
         Align = alTop
         Caption = ' Cadastro '
         TabOrder = 1
-        ExplicitWidth = 824
         object lblNome: TLabel
           Left = 25
           Top = 21
@@ -158,7 +154,6 @@ object FrmMainPrincipal: TFrmMainPrincipal
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitWidth = 828
         object lblLoading: TLabel
           Left = 732
           Top = 11
@@ -251,9 +246,6 @@ object FrmMainPrincipal: TFrmMainPrincipal
         Height = 245
         Align = alRight
         TabOrder = 2
-        ExplicitLeft = 880
-        ExplicitTop = 176
-        ExplicitHeight = 41
         object Image1: TImage
           Left = 1
           Top = 1

@@ -1,4 +1,4 @@
-unit FrmPrincipal;
+﻿unit FrmPrincipal;
 
 interface
 
@@ -12,7 +12,7 @@ uses
   FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs,
   FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.Stan.Param,
   FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet,Classe.Connection,
-  REST.Types, Data.Bind.Components, Data.Bind.ObjectScope, REST.Client;
+  REST.Types, Data.Bind.Components ;
 
 type
   TFrmMainPrincipal = class(TForm)
@@ -51,32 +51,29 @@ type
     Procedure ClearFields;
     procedure ExcluirPorIdClick(Sender: TObject);
     procedure btnCarregarBancoMemoriaClick(Sender: TObject);
-    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
-      DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure Validar;
   end;
 
 var
-  FrmMainPrincipal: TFrmMainPrincipal = nil;
+  FrmMainPrincipal: TFrmMainPrincipal;
 
 implementation
 
 {$R *.dfm}
 
-uses Classe.Pessoa,FrmPessoas,Classe.DataSet,Classe.Request.Json, System.Threading;
+uses FrmPessoas, classe.Pessoa, System.Threading,Classe.Request.Json,Classe.DataSet,
+     Classe.Services.Pessoa;
 
 procedure TFrmMainPrincipal.btnAdicionarMemoriaClick(Sender: TObject);
-var
-  LPessoa:TPessoa;
 begin
-  LPessoa:= TPessoa.Create;
+  Validar;
   try
-    LPessoa.SetNome(edtNome.Text);
-    LPessoa.SetDataNascimento(dtDataNascimento.Date);
-    LPessoa.SetSaldoDevedor(StrToFloatDef(edtSaldoDevedor.Text,0));
-    LPessoa.Salvarmemoria(LPessoa);
+    TServiceProduto.SalvaNaMemoria(edtNome.Text,
+                                   dtDataNascimento.Date,
+                                   StrToFloatDef(edtSaldoDevedor.Text,0));
   finally
-    FreeAndNil(LPessoa);
     LoadingParte2.Animate:= False;
     ClearFields;
     edtNome.SetFocus;
@@ -119,37 +116,23 @@ begin
 end;
 
 procedure TFrmMainPrincipal.btnGravarMemoriabancoClick(Sender: TObject);
-var
-  LPessoa:TPessoa;
 begin
-  LPessoa:= TPessoa.Create;
-  try
-    LPessoa.SetNome(edtNome.Text);
-    LPessoa.SetDataNascimento(dtDataNascimento.Date);
-    LPessoa.SetSaldoDevedor(StrToFloatDef(edtNome.Text,0));
-    LPessoa.Salvarmemoria(nil).SalvarBanco;
-  finally
-    FreeAndNil(LPessoa);
-  end;
+  TServiceProduto.SalvaNaMemoria(edtNome.Text,
+                                 dtDataNascimento.Date,
+                                 StrToFloatDef(edtSaldoDevedor.Text,0),
+                                 True);
 end;
 
 procedure TFrmMainPrincipal.Button1Click(Sender: TObject);
-var
-  LPessoa:TPessoa;
 begin
-  LPessoa:= TPessoa.Create;
+  FrmPessoasCadastradas:= TFrmPessoasCadastradas.Create(nil);
   try
-    FrmPessoasCadastradas:= TFrmPessoasCadastradas.Create(nil);
-    try
-      FrmPessoasCadastradas.DsPessoas.DataSet:= NIl;
-      FrmPessoasCadastradas.DsPessoas.DataSet:=  LPessoa.GetDataSetPessoasQuery;
-      FrmPessoasCadastradas.Caption:= 'Pessoas cadastradas (Banco)';
-      FrmPessoasCadastradas.ShowModal;
-    finally
-      FreeAndNil(FrmPessoasCadastradas);
-    end;
+    FrmPessoasCadastradas.DsPessoas.DataSet:= NIl;
+    FrmPessoasCadastradas.DsPessoas.DataSet:=  TServiceProduto.GetDataSetPessoasQuery;
+    FrmPessoasCadastradas.Caption:= 'Pessoas cadastradas (Banco)';
+    FrmPessoasCadastradas.ShowModal;
   finally
-   FreeAndNil(LPessoa);
+    FreeAndNil(FrmPessoasCadastradas);
   end;
 end;
 
@@ -185,24 +168,17 @@ begin
 end;
 
 procedure TFrmMainPrincipal.ExcluirPorIdClick(Sender: TObject);
-var
-  LPessoa:TPessoa;
 begin
-  LPessoa:= TPessoa.Create;
+  FrmPessoasCadastradas:= TFrmPessoasCadastradas.Create(nil);
   try
-    FrmPessoasCadastradas:= TFrmPessoasCadastradas.Create(nil);
-    try
-      FrmPessoasCadastradas.DsPessoas.DataSet:= NIl;
-      FrmPessoasCadastradas.DsPessoas.DataSet:=  LPessoa.GetDataSetPessoasQuery;
-      FrmPessoasCadastradas.Caption:= 'Pessoas cadastradas (Banco)';
-      FrmPessoasCadastradas.pbnlInfoExcluir.visible:= True;
-      FrmPessoasCadastradas.PopupMenu11.visible:= True;
-      FrmPessoasCadastradas.ShowModal;
-    finally
-      FreeAndNil(FrmPessoasCadastradas);
-    end;
+    FrmPessoasCadastradas.DsPessoas.DataSet:= NIl;
+    FrmPessoasCadastradas.DsPessoas.DataSet:= TServiceProduto.GetDataSetPessoasQuery;
+    FrmPessoasCadastradas.Caption:= 'Pessoas cadastradas (Banco)';
+    FrmPessoasCadastradas.pbnlInfoExcluir.visible:= True;
+    FrmPessoasCadastradas.PopupMenu11.visible:= True;
+    FrmPessoasCadastradas.ShowModal;
   finally
-   FreeAndNil(LPessoa);
+    FreeAndNil(FrmPessoasCadastradas);
   end;
 end;
 
@@ -218,23 +194,28 @@ begin
 end;
 
 procedure TFrmMainPrincipal.MostrarPessoasMemoriaClick(Sender: TObject);
-var
-  LPessoa:TPessoa;
 begin
-  LPessoa:= TPessoa.Create;
+  FrmPessoasCadastradas:= TFrmPessoasCadastradas.Create(nil);
   try
-    FrmPessoasCadastradas:= TFrmPessoasCadastradas.Create(nil);
-    try
-      FrmPessoasCadastradas.DsPessoas.DataSet:= NIl;
-      FrmPessoasCadastradas.DsPessoas.DataSet:=  LPessoa.GetDataSetPessoas;
-      FrmPessoasCadastradas.Caption:= 'Pessoas cadastradas (mem�ria)';
-      FrmPessoasCadastradas.ShowModal;
-    finally
-      FreeAndNil(FrmPessoasCadastradas);
-    end;
+    FrmPessoasCadastradas.DsPessoas.DataSet:= NIl;
+    FrmPessoasCadastradas.DsPessoas.DataSet:= TServiceProduto.MostrarPessoasMemoria;
+    FrmPessoasCadastradas.Caption:= 'Pessoas cadastradas (memória)';
+    FrmPessoasCadastradas.ShowModal;
   finally
-   FreeAndNil(LPessoa);
+    FreeAndNil(FrmPessoasCadastradas);
   end;
+end;
+
+procedure TFrmMainPrincipal.Validar;
+begin
+  if string.Equals(edtNome.Text, '') then
+    raise Exception.Create('O campo Nome não pode ser vazio ');
+
+  if string.Equals(dtDataNascimento.ToString,'') then
+    raise Exception.Create('O campo Data Nascimento não pode ser vazio ');
+
+  if string.Equals(edtSaldoDevedor.ToString,'') then
+    raise Exception.Create('O campo Saldo devedor não pode ser vazio ');
 end;
 
 end.
